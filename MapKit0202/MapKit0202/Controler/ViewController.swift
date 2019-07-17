@@ -1,13 +1,12 @@
 //
 //  ViewController.swift
-//  MapKit0106
+//  MapKit0202
 //
 //  Created by Luc Derosne on 09/07/2019.
 //  Copyright © 2019 Luc Derosne. All rights reserved.
 //
 
-// 02 01  Reprise de MapKit0111
-// Gérer plusieurs type d'annotations : plage et parc
+// Création d’une classe de type MKMarkerAnnotationView et simplifications
 
 import UIKit
 import MapKit
@@ -29,7 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        mapView.register(PoiAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        mapView.register(PoiAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         setup()
         setupLocationManager()
     }
@@ -57,14 +56,15 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MKMapViewDelegate {
+    
     func setup() {
 
         setupMap(coordonnees: coordinateInit, myLat: 3, myLong: 3)
         mapView.showsUserLocation = true
         mapView.delegate = self
         mapView.isRotateEnabled = true
-        mapView.addAnnotations([Location.corcovadoBeach, Location.islaTortuga, Location.playaVentanas, Location.playaAvellana, Location.playaCarrillo, Location.playaCarrillo, Location.playaCocles, Location.playaCocles, Location.playaConchal, Location.playaCopal, Location.playaCoyote, Location.playaDominical, Location.playaGuiones, Location.playaHermosa, Location.playaManuelAntonio, Location.playaPuertoViejo, Location.playaPuntaUva, Location.playaSamara, Location.playaSantaTeresa, Location.playaTamarindo, Location.playaUvita, Location.playaVargas, Location.puntaUva])
-        mapView.addAnnotations([Location.parcPoas, Location.parcIrazu, Location.parcCarillo, Location.parcTurrialba, Location.parcTortuguero, Location.ParcCahuita, Location.parcTenorio, Location.parcArenal, Location.parcRinconDeLaVieja, Location.parcBaulas, Location.parcPaloVerde, Location.parcCarara, Location.parcQuetzales, Location.parcMarinoBellena, Location.parcSantaRosa, Location.parcBarraHonda, Location.parcManuelAntonio, Location.parcTapenti, Location.parcCorcovado, Location.parcChirripo])
+        mapView.addAnnotations([Location.corcovadoBeach, Location.islaTortuga, Location.playaVentanas, Location.playaAvellana, Location.playaCarrillo, Location.playaCarrillo, Location.playaCocles, Location.playaCocles, Location.playaConchal, Location.playaCopal, Location.playaCoyote, Location.playaDominical, Location.playaGuiones, Location.playaHermosa, Location.playaManuelAntonio, Location.playaPuertoViejo, Location.playaPuntaUva, Location.playaSamara, Location.playaSantaTeresa, Location.playaTamarindo, Location.playaUvita, Location.playaVargas])
+        mapView.addAnnotations([Location.parcPoas, Location.parcIrazu, Location.parcCarillo, Location.parcTurrialba, Location.parcTortuguero, Location.ParcCahuita, Location.parcTenorio, Location.parcArenal, Location.parcRinconDeLaVieja, Location.parcBaulas, Location.parcPaloVerde, Location.parcCarara, Location.parcQuetzales, Location.parcMarinoBellena, Location.parcSantaRosa, Location.parcBarraHonda, Location.parcManuelAntonio, Location.parcTapenti, Location.parcCorcovado, Location.parcChirripo, Location.parcGandoca])
         
         let capitalArea = MKCircle(center: coordinateInit, radius: 5000) // rayon de 5 km
         mapView.addOverlay(capitalArea)
@@ -75,31 +75,6 @@ extension ViewController: MKMapViewDelegate {
         let span = MKCoordinateSpan(latitudeDelta: myLat , longitudeDelta: myLong)
         let region = MKCoordinateRegion(center: coordonnees, span: span)
         mapView.setRegion(region, animated: true)
-    }
-    
-    // enrichir les annotations
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? Poi else { return nil }
-        let identifier = "poi"
-        var view: MKMarkerAnnotationView
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-            as? MKMarkerAnnotationView {
-            dequeuedView.annotation = annotation
-            view = dequeuedView
-        } else {
-            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            view.markerTintColor = .purple
-            if annotation.poiType == .playa {
-                view.markerTintColor = .yellow
-            } else {
-                view.markerTintColor = .green
-            }
-            
-        }
-        return view
     }
     
     // placer le titre et l'info du Poi dans l'alerte

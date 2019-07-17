@@ -34,7 +34,6 @@ struct Location {
     static let playaTamarindo = Poi(title: "Playa Tamarindo", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 10.296618, longitude: -85.845957), info: "", type: .playa)
     static let playaUvita = Poi(title: "Playa Uvita", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.151113, longitude: -83.740072), info: "Puntarenas", type: .playa)
     static let playaVargas = Poi(title: "Playa Vargas", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.731408, longitude: -82.814705), info: "Cahuita", type: .playa)
-    static let puntaUva = Poi(title: "Punta Uva", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.637718, longitude: -82.695413), info: "Limon", type: .parque)
     static let parcPoas = Poi(title: "Parc National Volcan Poás", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 10.186050, longitude: -84.236462), info: "AlaJuela", type: .parque)
     static let parcIrazu = Poi(title: "Parc National Volcan Irazú", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.980961, longitude: -83.849057), info: "Cartago", type: .parque)
     static let parcCarillo = Poi(title: "Parc National Braulio Carrillo", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 10.152950, longitude: -84.094192), info: "Barva", type: .parque)
@@ -55,7 +54,7 @@ struct Location {
     static let parcCorcovado = Poi(title: "Parc National Corcovado", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 8.541207, longitude: -83.570721), info: "Peninsula de Osa", type: .parque)
     static let parcMarinoBellena = Poi(title: "Parc National Marino Bellena", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.156009, longitude: -83.747847), info: "Uvita", type: .parque)
     static let parcChirripo = Poi(title: "Parc National Chirripo", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.513616, longitude: -83.494277), info: "Pérez", type: .parque)
-    static let parcGandoca = Poi(title: "Refuge Gandica Manzanillo", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.657093, longitude: -82.681541), info: " Limón", type: .parque)
+    static let parcGandoca = Poi(title: "Refuge Gandoca Manzanillo", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.629813, longitude: -82.647520), info: "Limón", type: .parque)
 }
 
 class Poi: NSObject, MKAnnotation {
