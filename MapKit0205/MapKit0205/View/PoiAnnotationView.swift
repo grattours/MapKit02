@@ -10,6 +10,7 @@
 import MapKit
 
 class PoiAnnotationView: MKMarkerAnnotationView {
+    
     override var annotation: MKAnnotation? {
         willSet {
             if let poi = newValue as? Poi {
@@ -46,5 +47,4 @@ class PoiAnnotationView: MKMarkerAnnotationView {
         map.openInMaps(launchOptions: options)
     }
 
-    
 }

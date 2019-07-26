@@ -6,7 +6,7 @@
 //  Copyright © 2019 Luc Derosne. All rights reserved.
 //
 
-// 2.4 Des annotations avec un visuel proportionnel
+// Tracer un itinéraire à partir de notre geolocalisation
 
 import UIKit
 import MapKit
@@ -53,13 +53,13 @@ class ViewController: UIViewController {
         }
     }
     
-
+    
 }
 
 extension ViewController: MKMapViewDelegate {
     
     func setup() {
-
+        
         setupMap(coordonnees: coordinateInit, myLat: 3, myLong: 3)
         mapView.showsUserLocation = true
         mapView.delegate = self
@@ -83,7 +83,7 @@ extension ViewController: MKMapViewDelegate {
         guard let poi = view.annotation as? Poi else { return }
         let placeName = poi.title
         let placeInfo = poi.info
-
+        
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
@@ -121,5 +121,5 @@ extension ViewController: CLLocationManagerDelegate {
         }
     }
     
-
+    
 } // end
