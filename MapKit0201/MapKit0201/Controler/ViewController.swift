@@ -6,8 +6,9 @@
 //  Copyright © 2019 Luc Derosne. All rights reserved.
 //
 
-// 02 01  Reprise de MapKit0111
+// 2.1  Reprise depuis  MapKit0111
 // Gérer plusieurs type d'annotations : plage et parc
+
 
 import UIKit
 import MapKit
@@ -63,7 +64,7 @@ extension ViewController: MKMapViewDelegate {
         mapView.delegate = self
         mapView.isRotateEnabled = true
         mapView.addAnnotations([Location.corcovadoBeach, Location.islaTortuga, Location.playaVentanas, Location.playaAvellana, Location.playaCarrillo, Location.playaCarrillo, Location.playaCocles, Location.playaCocles, Location.playaConchal, Location.playaCopal, Location.playaCoyote, Location.playaDominical, Location.playaGuiones, Location.playaHermosa, Location.playaManuelAntonio, Location.playaPuertoViejo, Location.playaPuntaUva, Location.playaSamara, Location.playaSantaTeresa, Location.playaTamarindo, Location.playaUvita, Location.playaVargas, Location.puntaUva])
-        mapView.addAnnotations([Location.parcPoas, Location.parcIrazu, Location.parcCarillo, Location.parcTurrialba, Location.parcTortuguero, Location.ParcCahuita, Location.parcTenorio, Location.parcArenal, Location.parcRinconDeLaVieja, Location.parcBaulas, Location.parcPaloVerde, Location.parcCarara, Location.parcQuetzales, Location.parcMarinoBellena, Location.parcSantaRosa, Location.parcBarraHonda, Location.parcManuelAntonio, Location.parcTapenti, Location.parcCorcovado, Location.parcChirripo])
+        mapView.addAnnotations([Location.parcPoas, Location.parcIrazu, Location.parcCarillo, Location.parcTurrialba, Location.parcTortuguero, Location.ParcCahuita, Location.parcTenorio, Location.parcArenal, Location.parcRinconDeLaVieja, Location.parcBaulas, Location.parcPaloVerde, Location.parcCarara, Location.parcQuetzales, Location.parcMarinoBellena, Location.parcSantaRosa, Location.parcBarraHonda, Location.parcManuelAntonio, Location.parcTapenti, Location.parcCorcovado, Location.parcChirripo, Location.parcGandoca])
         
         let capitalArea = MKCircle(center: coordinateInit, radius: 5000) // rayon de 5 km
         mapView.addOverlay(capitalArea)

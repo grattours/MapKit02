@@ -55,7 +55,7 @@ struct Location {
     static let parcCorcovado = Poi(title: "Parc National Corcovado", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 8.541207, longitude: -83.570721), info: "Peninsula de Osa", type: .parque)
     static let parcMarinoBellena = Poi(title: "Parc National Marino Bellena", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.156009, longitude: -83.747847), info: "Uvita", type: .parque)
     static let parcChirripo = Poi(title: "Parc National Chirripo", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.513616, longitude: -83.494277), info: "Pérez", type: .parque)
-    static let parcGandoca = Poi(title: "Refuge Gandica Manzanillo", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.657093, longitude: -82.681541), info: " Limón", type: .parque)
+    static let parcGandoca = Poi(title: "Refuge Gandoca Manzanillo", subtitle: "", coordinate: CLLocationCoordinate2D(latitude: 9.629813, longitude: -82.647520), info: "Limón", type: .parque)
 }
 
 class Poi: NSObject, MKAnnotation {

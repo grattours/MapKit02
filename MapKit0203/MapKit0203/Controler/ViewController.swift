@@ -6,8 +6,7 @@
 //  Copyright © 2019 Luc Derosne. All rights reserved.
 //
 
-// 02 01  Reprise de MapKit0111
-// Gérer plusieurs type d'annotations : plage et parc
+// 2.3 Regroupement des annotations – les clusters
 
 import UIKit
 import MapKit

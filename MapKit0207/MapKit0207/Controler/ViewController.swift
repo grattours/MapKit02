@@ -5,8 +5,8 @@
 //  Created by Luc Derosne on 09/07/2019.
 //  Copyright © 2019 Luc Derosne. All rights reserved.
 //
-// Mapkit Part 2 point 7
-// Simuler une localisation avec un fichier Gpx
+
+// 2.7 simuler une localisation avec un fichier Gpx
 
 import UIKit
 import MapKit

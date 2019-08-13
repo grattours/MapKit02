@@ -5,8 +5,8 @@
 //  Created by Luc Derosne on 09/07/2019.
 //  Copyright © 2019 Luc Derosne. All rights reserved.
 //
-// Mapkit Part 2 Point 9
-// Tracé un itinéraire depuis un point fixe vers un point choisi
+
+// 2.10 Ajouter les annotations avec un « long gesture » et/ou avec  une recherche simple
 
 import UIKit
 import MapKit

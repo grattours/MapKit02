@@ -5,6 +5,7 @@
 //  Created by Luc Derosne on 24/07/2019.
 //  Copyright © 2019 Luc Derosne. All rights reserved.
 //
+// 2.6 flyover
 
 import UIKit
 import MapKit
@@ -26,12 +27,15 @@ class ViewController: UIViewController {
     var coordinate = CLLocationCoordinate2DMake(48.852982, 2.349902)
     
     
+    fileprivate func cameraFunc() {
+        camera = MKMapCamera(lookingAtCenter: coordinate, fromEyeCoordinate: coordinate, eyeAltitude: 200)
+        mapView.camera = camera!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.mapType = .satelliteFlyover
-        coordinate = notreDameCoordinate
-        camera = MKMapCamera(lookingAtCenter: coordinate, fromDistance: distance, pitch: pitch, heading: heading)
-        mapView.camera = camera!
+        cameraFunc()
     }
 
 
@@ -46,10 +50,16 @@ class ViewController: UIViewController {
         default:
             break
         }
-        camera = MKMapCamera(lookingAtCenter: coordinate, fromEyeCoordinate: coordinate, eyeAltitude: 200)
-        mapView.camera = camera!
+        cameraFunc()
     }
     
-
+    @IBAction func animateCamera(_ sender: AnyObject) {
+        
+        UIView.animate(withDuration: 20.0, animations: {
+            self.camera!.heading += 180
+            self.camera!.pitch = 25
+            self.mapView.camera = self.camera!
+        })
+    }
 }
 

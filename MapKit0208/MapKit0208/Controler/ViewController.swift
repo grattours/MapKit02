@@ -5,8 +5,8 @@
 //  Created by Luc Derosne on 09/07/2019.
 //  Copyright © 2019 Luc Derosne. All rights reserved.
 //
-// Mapkit Part 2 Point 8
-// renvoyer l’adresse et les coordonnées de n’importe quel point sur la carte
+
+// 2.8 renvoyer l’adresse et les coordonnées de n’importe quel point sur la carte
 
 import UIKit
 import MapKit

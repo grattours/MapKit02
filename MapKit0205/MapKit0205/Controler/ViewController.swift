@@ -6,7 +6,7 @@
 //  Copyright © 2019 Luc Derosne. All rights reserved.
 //
 
-// Tracer un itinéraire à partir de notre geolocalisation
+// 2.5 tracer un itinéraire à partir de notre geolocalisation
 
 import UIKit
 import MapKit

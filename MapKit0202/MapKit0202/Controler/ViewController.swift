@@ -6,7 +6,7 @@
 //  Copyright © 2019 Luc Derosne. All rights reserved.
 //
 
-// Création d’une classe de type MKMarkerAnnotationView et simplifications
+// 2.2 Création d’une classe de type MKMarkerAnnotationView et simplifications
 
 import UIKit
 import MapKit

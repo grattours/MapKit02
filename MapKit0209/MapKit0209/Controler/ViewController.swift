@@ -5,8 +5,8 @@
 //  Created by Luc Derosne on 09/07/2019.
 //  Copyright © 2019 Luc Derosne. All rights reserved.
 //
-// Mapkit Part 2 Point 9
-// Tracé un itinéraire depuis un point fixe vers un point choisi
+
+// 2.9 tracé un itinéraire depuis un point fixe vers un point choisi
 
 import UIKit
 import MapKit
@@ -55,17 +55,19 @@ class ViewController: UIViewController {
             print("nil dans getPosition")
         }
     }
-
+    
     @IBAction func goButtonTapped(_ sender: Any) {
         getDirections()
     }
     
+    
+    
     func getDirections() {
-       
+        
         guard let location = locationManager.location?.coordinate else {
-                    print("no current location")
-                    return
-                }
+            print("no current location")
+            return
+        }
         
         let request = createDirectionsRequest(from: location)
         let directions = MKDirections(request: request)
@@ -124,7 +126,7 @@ extension ViewController: MKMapViewDelegate {
         guard let poi = view.annotation as? Poi else { return }
         let placeName = poi.title
         let placeInfo = poi.info
-
+        
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
@@ -167,18 +169,25 @@ extension ViewController: MKMapViewDelegate {
             let lat = String(format: "%.04f", (placemark.location?.coordinate.latitude ?? 0.0))
             let country = placemark.country ?? ""
             let locality = placemark.locality ?? ""
-
+            
             self.adressLabel.text = "\(lat) \(lon)"
             let streetNumber = placemark.subThoroughfare ?? ""
             let streetName = placemark.thoroughfare ?? ""
-
+            
             DispatchQueue.main.async {
                 self.adressLabel.text = " \(streetNumber) \(streetName) \n \(locality) \(country) \n lat \(lat) long \(lon)"
             } // dispatch
         }// geocoder
     } // func mapview
     
-
+    func addAnnotation(location: CLLocationCoordinate2D){
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        annotation.title = "Titre"
+        annotation.subtitle = "Sous titre"
+        self.mapView.addAnnotation(annotation)
+    }
+    
 }
 
 extension ViewController: CLLocationManagerDelegate {
@@ -203,6 +212,7 @@ extension ViewController: CLLocationManagerDelegate {
         }
     }
     
-
-
+    
+    
 } // end
+

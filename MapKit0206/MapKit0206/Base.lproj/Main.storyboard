@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ico-GF-F3M">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="834"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="835"/>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xnR-Pr-BSQ">
                                 <rect key="frame" x="0.0" y="834" width="414" height="29"/>
@@ -32,16 +32,29 @@
                                     <action selector="changePlace:" destination="BYZ-38-t0r" eventType="valueChanged" id="oQv-uv-UEz"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3N-p5-flM">
+                                <rect key="frame" x="130" y="789" width="154" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Animate">
+                                    <color key="titleColor" red="0.2060527503490448" green="0.4713212251663208" blue="0.96475929021835327" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="animateCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L3o-e8-RfP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ico-GF-F3M" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EDW-9f-U2r"/>
-                            <constraint firstItem="xnR-Pr-BSQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fh8-mP-gY0"/>
-                            <constraint firstItem="ico-GF-F3M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lnj-Ze-pPA"/>
-                            <constraint firstItem="xnR-Pr-BSQ" firstAttribute="top" secondItem="ico-GF-F3M" secondAttribute="bottom" id="MJS-Kj-s1k"/>
-                            <constraint firstItem="xnR-Pr-BSQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QmY-cN-dBt"/>
-                            <constraint firstItem="ico-GF-F3M" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lgt-Qi-imi"/>
-                            <constraint firstItem="xnR-Pr-BSQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nuy-rz-Bcy"/>
+                            <constraint firstAttribute="trailing" secondItem="xnR-Pr-BSQ" secondAttribute="trailing" id="2Yi-Xj-Gl3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ico-GF-F3M" secondAttribute="bottom" constant="27" id="2bd-rG-Xee"/>
+                            <constraint firstItem="xnR-Pr-BSQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Gk-gX-iq4"/>
+                            <constraint firstItem="xnR-Pr-BSQ" firstAttribute="top" secondItem="b3N-p5-flM" secondAttribute="bottom" constant="15" id="9Z1-HR-h6q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b3N-p5-flM" secondAttribute="trailing" constant="130" id="CfG-KV-qtN"/>
+                            <constraint firstItem="xnR-Pr-BSQ" firstAttribute="trailing" secondItem="ico-GF-F3M" secondAttribute="trailing" id="JjN-eR-Cio"/>
+                            <constraint firstItem="xnR-Pr-BSQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QZY-NQ-lcO"/>
+                            <constraint firstItem="b3N-p5-flM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="VPy-QR-AI2"/>
+                            <constraint firstItem="xnR-Pr-BSQ" firstAttribute="leading" secondItem="ico-GF-F3M" secondAttribute="leading" id="e4l-2a-9oo"/>
+                            <constraint firstItem="ico-GF-F3M" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ob6-Ov-aRY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
